@@ -1,0 +1,17 @@
+services:
+  postgres18:
+    container_name: postgres18
+    image: postgres:18
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - /var/lib/postgresql:/var/lib/postgresql
+    networks:
+      - hw_net
+    environment:
+      POSTGRES_PASSWORD: password
+
+networks:
+    hw_net:
+        name: hw_net
